@@ -52,8 +52,8 @@ pt <- c('pb tubaire bilatéral','pb tubaire unilatéral')
 couples$patF_tubaire = as.factor(ifelse(couples$patho_f %in% pt, 1, 0))
 
 couples$patF_na = as.factor(ifelse(is.na(couples$patho_f), 1, 0))
-couples$patF_autre = as.factor(ifelse(couples$patho_h == 'autre', 1, 0))
-couples$patF_non = as.factor(ifelse(couples$patho_h == 'non', 1, 0))
+couples$patF_autre = as.factor(ifelse(couples$patho_f == 'autre', 1, 0))
+couples$patF_non = as.factor(ifelse(couples$patho_f == 'non', 1, 0))
 
 summary(couples)
 
