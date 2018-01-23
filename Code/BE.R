@@ -31,9 +31,9 @@ couples$diplomeF_bac = as.factor(ifelse(couples$diplome_f == 'Bac', 1, 0))
 couples$diplomeF_bacP = as.factor(ifelse(couples$diplome_f == 'Bac-', 1, 0))
 couples$diplomeF_bacM = as.factor(ifelse(couples$diplome_f == 'Bac+', 1, 0))
 
-couples$diplomeH_bac = as.factor(ifelse(couples$diplome_f == 'Bac', 1, 0))
-couples$diplomeH_bacP = as.factor(ifelse(couples$diplome_f == 'Bac-', 1, 0))
-couples$diplomeH_bacM = as.factor(ifelse(couples$diplome_f == 'Bac+', 1, 0))
+couples$diplomeH_bac = as.factor(ifelse(couples$diplome_h == 'Bac', 1, 0))
+couples$diplomeH_bacP = as.factor(ifelse(couples$diplome_h == 'Bac-', 1, 0))
+couples$diplomeH_bacM = as.factor(ifelse(couples$diplome_h == 'Bac+', 1, 0))
 
 pm <- c('neurologique','sinusites chroniques , pathologies respiratoire chroniques','pathologies respiratoire chroniques'
         ,'diabète','sinusites chroniques')
@@ -47,9 +47,9 @@ couples$patH_autre = as.factor(ifelse(couples$patho_h == 'autre', 1, 0))
 couples$patH_non = as.factor(ifelse(couples$patho_h == 'non', 1, 0))
 
 pm <- c('endométriose','hydrosalpinx')
-couples$patF_maladie = as.factor(ifelse(couples$patho_h %in% pm, 1, 0))
+couples$patF_maladie = as.factor(ifelse(couples$patho_f %in% pm, 1, 0))
 pt <- c('pb tubaire bilatéral','pb tubaire unilatéral')
-couples$patF_tubaire = as.factor(ifelse(couples$patho_h %in% pt, 1, 0))
+couples$patF_tubaire = as.factor(ifelse(couples$patho_f %in% pt, 1, 0))
 
 couples$patF_na = as.factor(ifelse(is.na(couples$patho_f), 1, 0))
 couples$patF_autre = as.factor(ifelse(couples$patho_h == 'autre', 1, 0))
