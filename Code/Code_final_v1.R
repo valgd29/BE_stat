@@ -173,7 +173,7 @@ summary(df_test_reg[,-1])
 
 
 #abb
-
+'''
 table(couples$enfant, couples$ct_f_anovulation, couples$trt_iac)#5
 table(couples$enfant, couples$ct_f_anovulation, couples$trt_iad)#0
 table(couples$enfant, couples$ct_f_anovulation, couples$trt_aucun)#4
@@ -182,7 +182,8 @@ table(couples$enfant, couples$ct_f_anovulation, couples$trt_fiv)#6 dont 4 avec e
 table(couples$enfant, couples$spermo_azoo, couples$trt_iac)#8
 table(couples$enfant, couples$spermo_azoo, couples$trt_fiv)#1
 table(couples$enfant, couples$spermo_azoo, couples$trt_icsi)#37 enfant
-table(couples$enfant, couples$ct_f_anovulation, couples$trt_fiv)#6 dont 4 avec enfant
+table(couples$enfant, couples$spermo_azoo, couples$trt_aucun)#0
+table(couples$enfant, couples$ct_f_anovulation, couples$spermo_azoo)
 
 table(couples$enfant, couples$ct_f_anovulation, couples$trt_iad)#1 et pas d'enfant
 
@@ -203,4 +204,9 @@ col = c("red","green"))
 legend("topright",
 c("no child"," child"),
 fill = c("red","green")
-)
+)'''
+
+library("survival")
+couples.surv=Surv(as.numeric(couples$diff_consult_ddnconcept),couples$enfant)
+
+couples.surv <- survfit(couples.surv)
